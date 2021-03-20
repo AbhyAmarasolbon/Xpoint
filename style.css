@@ -1,0 +1,55 @@
+/* Navbar */
+.navbar {
+    position: relative;
+    z-index: 1; /* utk majuin 1 layer kedepan */
+}
+
+.navbar-brand {
+    font-family: Viga;
+    font-size: 32px;
+}
+
+.jumbotron {
+    background-image: url(img/hero.jpg);
+    background-size: cover;
+    height: 500px;
+    text-align: center; /* Semua elemen yg ada pada class jumbotron jadinya ditengah. termasuk button "our work" nya */
+    position: relative;
+    padding: 0.1px;
+}
+
+.order-form .container {
+    color: #4c4c4c;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.order-form-label {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.order-form-input {
+    width: 100%;
+    padding: 8px 8px;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-radius: 3px !important;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.2em;
+    background-color: transparent;
+    border-color: #cccccc;
+}
+
+.btn-submit:hover {
+    background-color: #090909 !important;
+}
+
+.alert {
+    display: none;
+    margin-top: 10px;
+}
