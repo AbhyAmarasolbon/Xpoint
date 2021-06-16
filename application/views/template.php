@@ -9,10 +9,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- My Own CSS -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/myOwnCss/template.css">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/fontawesome-free/css/all.min.css">
   <!-- Ekko Lightbox -->
@@ -59,7 +55,7 @@
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="btn btn-secondary pl-1 pr-1 pt-1 pb-1 nav-item d-none d-sm-inline-block">
+        <li class="btn btn-warning pl-1 pr-1 pt-1 pb-1 nav-item d-none d-sm-inline-block">
           <a href="<?php echo base_url(); ?>index.php/main/logout" class="nav-link">Logout</a>
         </li>
       </ul>

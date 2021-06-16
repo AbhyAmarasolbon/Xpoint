@@ -30,7 +30,7 @@ class Main_model extends CI_Model
 	{
 		$data = array(
 			'username' 		=> $this->input->post('username'),
-			'email' 		=> $this->input->post('email'),
+			'email' 	=> $this->input->post('email'),
 			'password' 		=> md5($this->input->post('password')),
 		);
 		$this->db->insert('user', $data);
