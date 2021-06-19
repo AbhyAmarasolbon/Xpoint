@@ -42,7 +42,7 @@ class TestUnit extends CI_Controller
     }
 
     // FUNCTION KEDUA
-    public function registerVariable($user, $email, $pass)
+    private function registerVariable($user, $email, $pass)
     {
         $data = array(
             'username'         => $user,
@@ -58,32 +58,32 @@ class TestUnit extends CI_Controller
         }
     }
 
-    public function test_doRegister($orders, $quantity, $totalbayar)
+    public function test_doRegister()
     {
-        $test = $this->registerVariable();
+        $test = $this->registerVariable('irfan', 'irfan@gmail.com', 'password');
         $expected_result = TRUE;
         $test_name = 'Testing do register';
         echo $this->unit->run($test,  $expected_result,  $test_name);
     }
 
     // FUNCTION KETIGA
-    public function placeorder_variable()
+    private function placeOrdersVariable($id_cust, $id_resto, $table, $orderVarBaru, $orderQtyBaru)
     {
         date_default_timezone_set('Asia/Jakarta');
         $timestamp = date('Y-m-d H:i:s');
         $data_order = array(
-            'id_user'        => $this->input->post('id_cust'),
-            'id_resto'        => $this->input->post('id_resto'),
+            'id_user'        => $id_cust,
+            'id_resto'        => $id_resto,
             'total_bayar'    => NULL,
-            'no_table'        => $this->input->post('table'),
+            'no_table'        => $table,
             'created_at'    => $timestamp,
             'status'        => 'WAITING'
         );
 
         $this->db->insert('order_list', $data_order);
 
-        $orders = $_POST['orders'];
-        $quantity = $_POST['quantity'];
+        $orders = $orderVarBaru;
+        $quantity = $orderQtyBaru;
         $totalbayar = 0;
 
         foreach ($orders as $index => $orderlist) {
@@ -128,11 +128,11 @@ class TestUnit extends CI_Controller
         }
     }
 
-    public function test_doRegister()
+    public function test_placeOrders()
     {
-        $test = $this->registerVariable('abi', 'abi@gmail.com', 'password');
+        $test = $this->placeOrdersVariable('7', '1', '3', ['Katsu Hot Ramen', 'Lemon Tea', 'Crispy Snacks'], [1, 1, 1]);
         $expected_result = TRUE;
-        $test_name = 'Testing do register';
+        $test_name = 'Testing do Booking';
         echo $this->unit->run($test,  $expected_result,  $test_name);
     }
 }
